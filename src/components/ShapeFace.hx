@@ -31,9 +31,7 @@ class ShapeFace extends Component
 
     override function init():Void
     {
-        // trace('color ${color}');
-        // trace('shape ${shape}');
-        // trace('-----');
+        
     }
 
     override function onadded():Void
@@ -46,12 +44,15 @@ class ShapeFace extends Component
 
     }
 
+
+
     public function draw():Void
     {
         face = new Visual({
             name:'face',
             name_unique:true,
-            color: color
+            color: color,
+            depth: 2
         });
         switch(shape)
         {
@@ -66,27 +67,17 @@ class ShapeFace extends Component
 
     function drawCircle():Void
     {
-        _shapesize = Card.CARD_SIZE*0.4;
-        // face.geometry = Luxe.draw.circle({
-        //     x:0, y:0,
-        //     r: _shapesize
-        // });
+        _shapesize = Card.CARD_SIZE*0.25;
         face.geometry = Luxe.draw.ngon({
             x:0, y:0,
             r: _shapesize,
-            sides: 16,
+            sides: 8,
             solid: true
         });
     }
     function drawBox():Void
     {
-        _shapesize = Card.CARD_SIZE*0.6;
-        // face.geometry = Luxe.draw.box({
-        //     x: -_shapesize/2,
-        //     y: -_shapesize/2,
-        //     w: _shapesize,
-        //     h: _shapesize
-        // });
+        _shapesize = Card.CARD_SIZE*0.25;
         face.geometry = Luxe.draw.ngon({
             x:0, y:0,
             r: _shapesize,
@@ -96,7 +87,7 @@ class ShapeFace extends Component
     }
     function drawTriangle():Void
     {
-        _shapesize = Card.CARD_SIZE*0.4;
+        _shapesize = Card.CARD_SIZE*0.25;
         face.geometry = Luxe.draw.ngon({
             x:0, y:0,
             r: _shapesize,

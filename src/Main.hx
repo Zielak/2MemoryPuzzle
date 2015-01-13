@@ -63,16 +63,19 @@ class Main extends luxe.Game
         
     } //update
 
-
+    // override function onmousemove(event:luxe.MouseEvent):Void
+    // {
+    //     Luxe.events.fire('mouse.move', event);
+    // }
 
     function initGame():Void
     {
 
         var boardProperties:BoardProperties = new BoardProperties({
             name: 'properties',
-            size_x: 5,
-            size_y: 1,
-            padding: 10,
+            size_x: 4,
+            size_y: 4,
+            padding: 5,
             margin: 20
         });
 
