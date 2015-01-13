@@ -1,0 +1,25 @@
+{
+
+  project : {
+    name : '2MemoryPuzzle',
+    version : '1.0.0',
+    author : 'Darek Greenly',
+
+    app : {
+      name : '2MemoryPuzzle',
+      package : 'pl.zielak.2MemoryPuzzle'
+    },
+
+    build : {
+      dependencies : {
+        luxe : '*',
+      }
+    },
+
+    files : {
+      assets : 'assets/'
+    }
+
+  }
+
+}
