@@ -10,10 +10,6 @@ import components.BoardProperties;
 
 
 
-typedef CardEvent = {
-    var cardName : Card;
-}
-
 
 class Main extends luxe.Game
 {

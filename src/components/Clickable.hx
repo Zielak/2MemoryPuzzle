@@ -57,9 +57,16 @@ class Clickable extends Component
         }
     }
 
+    override public function onmousedown(event:MouseEvent):Void
+    {
+        if(isOver)
+        {
+            Luxe.events.fire('card.clicked', entity);
+        }
+    }
+
     function onover():Void
     {
-        trace('OVER');
         isOver = true;
         cast(entity, Visual).color = overColor;
     }
@@ -67,9 +74,9 @@ class Clickable extends Component
 
     function onout():Void
     {
-        trace('OUT');
         isOver = false;
         cast(entity, Visual).color = outColor;
     }
+
 
 }

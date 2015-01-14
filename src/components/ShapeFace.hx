@@ -20,6 +20,7 @@ class ShapeFace extends Component
 
 
 
+
     override public function new( ?_options:ShapeFaceOptions ) {
 
         shape = _options.shape;
@@ -31,7 +32,12 @@ class ShapeFace extends Component
 
     override function init():Void
     {
-        
+        Luxe.events.listen('card.hide', function(_){hideCard();});
+        Luxe.events.listen('card.show', function(_){showCard();});
+
+        entity.events.listen('card.hide', function(_){hideCard();});
+        entity.events.listen('card.show', function(_){showCard();});
+        entity.events.listen('card.found', function(_){foundCard();});
     }
 
     override function onadded():Void
@@ -43,8 +49,6 @@ class ShapeFace extends Component
     {
 
     }
-
-
 
     public function draw():Void
     {
@@ -96,6 +100,30 @@ class ShapeFace extends Component
         });
     }
 
+
+
+    function hideCard():Void
+    {
+        face.visible = false;
+    }
+
+    function showCard():Void
+    {
+        face.visible = true;
+    }
+
+    function foundCard():Void
+    {
+        // trace('foundCard()');
+        face.add(new components.Blinking({name:'blinking'}));
+    }
+
+
+
+    override public function ondestroy():Void
+    {
+        face.destroy();
+    }
 
 }
 

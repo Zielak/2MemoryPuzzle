@@ -10,7 +10,7 @@ class Card extends Visual
         // Size of every card, rectangles
     public static inline var CARD_SIZE:Int = 60;
 
-    
+    public var twin:Card;
 
     override public function init():Void
     {
@@ -28,11 +28,14 @@ class Card extends Visual
         add(new components.Clickable({
             name: 'clickable'
         }));
+
+        events.listen('card.destroy', function(_){
+            destroy(true);
+        });
     }
 
+}
 
-
-
-
-
+typedef CardEvent = {
+    var card : Card;
 }
