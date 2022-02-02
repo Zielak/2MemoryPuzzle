@@ -4,8 +4,8 @@
 
 This time I'm trying out to use components some more, and of course events.
 
-More info: [http://zielak.pl/category/1gaw](http://zielak.pl/category/1gaw)
+More info: https://darekgreenly.com/tag/1gaw
 
 # Demo
 
-Play it on my blog: [http://zielak.pl/1gaw-2-memory-puzzle#more-256](http://zielak.pl/1gaw-2-memory-puzzle#more-256)
+Play it on my blog: https://darekgreenly.com/1gaw-2-memory-puzzle#continue
